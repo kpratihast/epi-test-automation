@@ -13,8 +13,10 @@ jobs:
           run: npm install
         - name: Test
           run: npm run test
-        - uses: actions/upload-artifact@v1
+        - name: Generate report
+          run: npm run report
+        - uses: actions/upload-artifact@v2
           if: failure()
           with:
-            name: logs
-            path: logs
+            name: allure-report
+            path: allure-report
