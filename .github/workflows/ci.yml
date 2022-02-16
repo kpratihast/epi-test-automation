@@ -17,8 +17,12 @@ jobs:
           run: npm run test
         - name: Generate report
           run: allure generate allure-results/ --clean
-        - uses: actions/upload-artifact@v2
-          if: failure()
-          with:
-            name: allure-report
-            path: allure-report
+        - name: ls
+          run: ls
+        - name: pwd
+          run: pwd
+#         - uses: actions/upload-artifact@v2
+#           if: failure()
+#           with:
+#             name: allure-report
+#             path: allure-report
